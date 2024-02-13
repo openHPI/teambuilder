@@ -1,0 +1,42 @@
+= form_tag({action: 'team_action'}, method: 'post', class: 'teams') do
+  .teams-list
+    .list-controls
+      .filters
+        label
+          ' Order teams by:
+          = hidden_field_tag :order, params[:order]
+          select.js-reorder-on-change
+            = options_from_collection_for_select(@course_teams.possible_sort_orders, :first, :last, params[:order])
+
+      .actions
+        a href="#" class="js-expand-all-teams" Expand all
+        a href="#" class="js-collapse-all-teams" Collapse all
+
+    - if @course.has_orphans?
+      .orphans
+        = render partial: 'team', locals: {team: @course.orphan_team}
+
+    - @course_teams.each do |team|
+      = render partial: 'team', locals: {team: team}
+
+  .buttons
+    - if @course.can_export?
+      = link_to 'Export as CSV', { format: 'csv' }, class: 'button'
+
+    - if @course.platform.collab_spaces?
+      = submit_tag 'Export to Collab Spaces', name: 'create_collab_spaces', class: 'button-primary', disabled: !@course.can_create_collab_spaces?, data: {confirm: 'Are you really ready to create Collab Spaces for your teams in the course? You cannot reverse or repeat this operation. Orphans will be ignored. Continue?'}
+
+    - if @course.can_clear_teams?
+      = submit_tag 'Back to team settings', name: 'clear_teams', class: 'reset', data: {confirm: 'This will delete the current teams. Do you really want to go back to and adjust the grouping settings?'}, title: 'Delete current team assignments and  go back to the group settings'
+
+    - if @course.can_manipulate_teams?
+      fieldset
+        = select_tag :target_team, options_from_collection_for_select(@course_teams.possible_targets, :id, :name), include_blank: 'Select target'
+        = submit_tag 'Move selected members', name: 'move_members'
+
+      fieldset
+        = text_field_tag :team_name, '', placeholder: 'Team name'
+        = submit_tag 'Create new team', name: 'create_team', title: 'Create a team with the selected members.'
+
+      fieldset
+        = submit_tag 'Delete empty teams', class:'reset', name: 'delete_empty_teams', title: 'Deletes all teams that have no members', data: {confirm: 'Do you really want to delete all empty teams? Teams that still have at least one member left, will not be affected.'}

@@ -1,0 +1,13 @@
+host: localhost:4444
+https: false
+admin_password: geheim
+platforms:
+  - name: local
+    type: xikolo
+    oauth:
+      key: consumer
+      secret: secret
+    services:
+      web: http://localhost:3000
+      course: http://localhost:3300
+      collab_space: http://localhost:4800

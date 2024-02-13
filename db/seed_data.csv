@@ -1,0 +1,172 @@
+preferred_language,default_language,commitment,area_of_expertise,location,location_lat,location_lng,time_zone,quiz_points,uuid
+English,English,5-6 Hours,Computer Science and Engineering,"Taipei City, Taiwan",25.0329694,121.5654177,28800,60,502ffdbb-b3b7-4e6d-a1eb-81a906f81d3a
+English,English,5-6 Hours,Other,"Hamburg, Deutschland",53.5510846,9.9936818,7200,47,f4f8b3fa-1ace-45ac-a255-9b8a8c6e46c7
+English,English,5-6 Hours,Computer Science and Engineering,Hungary,47.162494,19.503304,3600,80,474b4ffd-2c45-42b8-9616-4635bc8407ff
+English,English,5-6 Hours,Business and Management,Budapest,47.497912,19.040235,7200,40,3e8fc7c8-e646-4fe3-ad92-38a3b51f1711
+English,English,5-6 Hours,Media,"Hamburg, Deutschland",53.5510846,9.9936818,3600,80,69180309-8ed0-481f-a1c6-02c00803b2cf
+Dutch,English,5-6 Hours,Computer Science and Engineering,"Nijmegen, Nederland",51.8125626,5.8372264,7200,80,128749a9-2b82-405f-a2d5-189a256cc11b
+English,English,5-6 Hours,Other,"South Jakarta, South Jakarta City, Special Capital Region of Jakarta, Indonesia",-6.2614927,106.8105998,25200,80,03985929-0c31-4fd9-8eb4-de39564e6b88
+Turkish,English,5-6 Hours,Computer Science and Engineering,"Istanbul, İstanbul, Turkey",41.0082376,28.9783589,7200,80,fdd566b3-bf38-45e1-bb2a-786da54c3f9a
+Portuguese,English,5-6 Hours,Computer Science and Engineering,Brasil,-14.235004,-51.92528,-28800,60,10f75f26-913f-405e-bd5a-271f8b7500d7
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,67,720b69d6-d600-472a-aa7b-6e8e93f246a2
+French,English,1-2 Hours,Computer Science and Engineering,Tunisie,33.886917,9.537499,3600,80,83bf734e-63b9-43d8-8010-1ac628d5f5bc
+Russian,English,1-2 Hours,Social Science,"Белорусский государственный экономический университет, Партизанский просп. 26, Минск 220070, Беларусь",53.876727,27.604977,10800,47,f49d0c01-afb2-4305-a4db-454f7b09dabe
+English,English,1-2 Hours,Computer Science and Engineering,Pakistan,30.375321,69.345116,18000,0,c4847e72-963a-4dbf-a509-b7eb7f00536b
+German,English,1-2 Hours,Other,"St. Leon-Rot, Deutschland",49.2568614,8.6265334,3600,80,c7d6394a-8150-472d-9d36-3a58ba0f5aa4
+English,English,1-2 Hours,Computer Science and Engineering,"Erlangen, Germany",49.5896744,11.0119611,7200,67,482eba3b-8f3b-4bfb-a106-e5301a075be1
+German,English,1-2 Hours,Business and Management,"Walldorf, Deutschland",49.3063689,8.6427693,7200,80,7eeb647e-7ef5-4ff5-aea4-611dab7b12fa
+German,English,1-2 Hours,Computer Science and Engineering,"Markdorf, Germany",47.7193839,9.3925019,7200,80,729b0c28-4103-46ec-96a4-c1f770eb9ce5
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,c27ec0ed-1dcd-496e-807f-0de54d86b5c4
+English,English,1-2 Hours,Humanities,"Walldorf, Deutschland",49.3063689,8.6427693,7200,67,2f94f8a8-e61a-45da-b7c0-924650bd0e33
+English,English,1-2 Hours,Humanities,"Sankt Leon-Rot, Germany",49.2568614,8.6265334,3600,80,8b01531c-7304-4139-b730-8317c6c8e2f7
+English,English,1-2 Hours,Computer Science and Engineering,"İstanbul, İstanbul, Türkiye",41.0082376,28.9783589,10800,80,74a38a00-2514-4677-967a-3773c59c44a7
+English,English,1-2 Hours,Business and Management,France,46.227638,2.213749,7200,60,2722ef36-c5bc-4d52-b096-7f28e70e4666
+English,English,1-2 Hours,Business and Management,"Braunschweig, Deutschland",52.2688736,10.5267696,3600,80,82809366-a3fb-45f1-83d4-0bfbb0325d99
+Turkish,English,1-2 Hours,Computer Science and Engineering,"İstanbul, İstanbul, Türkiye",41.0082376,28.9783589,10800,80,042eb8f0-d259-426d-9920-c5ffec5bba3e
+English,English,1-2 Hours,Creative Design,"Rajpura, Punjab 140401, India",30.483997,76.5939516,18000,47,d2745bd5-cd43-4c32-a8c1-ca7590632857
+English,English,1-2 Hours,Computer Science and Engineering,"Dover, DE, USA",39.158168,-75.5243682,-14400,80,98f439ca-7180-457d-babb-97f26c04b44e
+English,English,1-2 Hours,Business and Management,"Dover, DE, USA",39.158168,-75.5243682,-14400,67,372b9c0f-48b5-4caf-92f3-983788c5db90
+English,English,1-2 Hours,Business and Management,"Delaware, USA",38.9108325,-75.5276699,-14400,37,67598c92-7434-4062-a0b1-c6a70c810d48
+English,English,1-2 Hours,Creative Design,"Montreal, QC, Canada",45.5016889,-73.567256,-18000,60,6a596ad3-1d79-4929-944b-160c8b246bbd
+German,English,1-2 Hours,Business and Management,"Berlin, Deutschland",52.5200066,13.404954,7200,80,ab55dbf2-9208-4897-aedd-81965ba5c3cd
+Chinese,English,1-2 Hours,Humanities,中国江苏省南京市东南大学,32.055982,118.794211,28800,60,bc42d02d-befd-49ad-890d-de9b585c0a5e
+Chinese,English,1-2 Hours,Creative Design,"Shanghai,China",31.230416,121.473701,28800,60,ef571c0a-4a42-434c-88b4-e796cede896f
+English,English,1-2 Hours,Computer Science and Engineering,"Auburn, Alabama, USA",32.6098566,-85.4807825,-18000,80,8639a0e8-febe-4ca0-8015-012563abbb4d
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,3eb601d5-40e5-4ba2-ac53-a56b62e74b76
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-18000,80,dc425ba4-f60a-448d-82f2-843953d1f5a4
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,025012a1-dc10-48a2-8571-2d5481642240
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,57c27d48-d908-4e9a-86ad-25816c843966
+English,English,1-2 Hours,Computer Science and Engineering,"Chitkara University, Patiala, Punjab 140401, India",30.5172684,76.6592313,18000,0,fa75e9cf-9179-471e-98eb-a23c0f022c75
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-18000,0,9ba67462-f205-4f87-91d2-2f13fd32ddd7
+German,English,1-2 Hours,Computer Science and Engineering,"Rodgau, Deutschland",50.0012757,8.8769235,7200,80,87ed67e4-7a26-4959-8f22-f2b288b2f8f5
+German,English,1-2 Hours,Computer Science and Engineering,"Rodgau, Deutschland",50.0012757,8.8769235,7200,80,4bec01d4-6c2d-421c-bd94-bfc6d539d87f
+Russian,English,1-2 Hours,Other,"Минск, Беларусь",53.9045398,27.5615244,10800,67,68f1ed95-a938-4093-bc48-bda4abdae73d
+Russian,English,1-2 Hours,Business and Management,"Минск, Беларусь",53.9045398,27.5615244,10800,80,f72d6373-d63e-464f-8453-6c5f7e2c17cb
+English,English,1-2 Hours,Computer Science and Engineering,Magyarország,47.162494,19.503304,7200,80,791b26b4-b8c6-4ac7-b3e1-86e6e7179801
+German,English,1-2 Hours,Computer Science and Engineering,"München, Deutschland",48.1351253,11.5819806,7200,80,3d5941ad-8923-41ba-83bf-f9c719cea134
+Russian,English,1-2 Hours,Business and Management,"Минск, Беларусь",53.9045398,27.5615244,10800,67,9ffe6bf6-6629-482f-b0ce-f01f2baf1025
+German,English,1-2 Hours,Creative Design,"Mannheim, Germany",49.4874592,8.4660395,-3600,47,a3bd7a6f-302e-4c16-a8fb-7c49db7a7ecc
+Russian,English,1-2 Hours,Computer Science and Engineering,"Минск, Беларусь",53.9045398,27.5615244,10800,67,12ae4859-7c9f-4da1-9a9e-350825126138
+English,English,1-2 Hours,Other,"Charlotte, NC, USA",35.2270869,-80.8431267,-14400,80,21aa8197-f2fd-4647-9b17-6f9bf8b46085
+English,English,1-2 Hours,Computer Science and Engineering,"Palo Alto, CA, USA",37.4418834,-122.1430195,-28800,80,5f72c88d-57d3-431d-9fe1-1ecb980e0cd4
+English,English,1-2 Hours,Business and Management,"Dover, DE, USA",39.158168,-75.5243682,-14400,60,4d0efe72-1d3a-432b-8d22-ab0bc8e3aac6
+English,English,1-2 Hours,Computer Science and Engineering,"Amsterdam, Netherlands",52.3702157,4.8951679,3600,80,b08c1cd0-c2dc-468a-bfda-7f4ea04e90ec
+English,English,1-2 Hours,Other,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,67,48a0dead-2f23-44df-84c7-bc9e0c4d6296
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-18000,80,f782ed96-5b07-4487-bfae-b90ad20848e0
+German,English,1-2 Hours,Computer Science and Engineering,"Hannover, Deutschland",52.3758916,9.7320104,7200,67,24a1deaa-a91f-4337-86da-ee1d0ada9d23
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,b3668e08-9ee1-4556-9239-89168754ce4b
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,e3509d91-6daf-46aa-8e62-0f5c6e306ad6
+English,English,1-2 Hours,Computer Science and Engineering,"Mansell Rd, Alpharetta, GA, USA",34.0389386,-84.3103669,-14400,0,dd94a1ba-31ed-47b6-8dc0-43dd803cb9b3
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,6b5e7b65-10b9-4271-bdd7-89b1006ecbd2
+English,English,1-2 Hours,Other,"Hyderabad, Telangana, India",17.385044,78.486671,18000,20,e97d980b-f0ba-4ea3-a023-98f976f76858
+Chinese,English,1-2 Hours,Business and Management,Shanghai,31.230416,121.473701,28800,0,50a5479a-edc1-4090-a36b-46978a274678
+English,English,1-2 Hours,Creative Design,"Präfektur Tokio, Japan",35.6894875,139.6917064,32400,60,841cedab-71ef-4489-b8e6-9adedd6bd598
+Chinese,English,1-2 Hours,Computer Science and Engineering,"Shanghai, Shanghai, China",31.230416,121.473701,28800,80,a1bc179c-1aef-4797-99b9-3ab407769286
+Chinese,English,1-2 Hours,Other,Beijing，China,39.904211,116.407395,28800,80,582b4997-ad51-4e19-a720-1b193c234058
+English,English,1-2 Hours,Computer Science and Engineering,"Bengaluru, Karnataka, India",12.9715987,77.5945627,18000,37,eb818198-2169-4ab8-b4d5-047151a02248
+Chinese,English,1-2 Hours,Creative Design,"Chengdu, Sichuan, China",30.572269,104.066541,28800,60,5713413f-fbac-46fd-af90-57b4e23ec7f3
+Chinese,English,1-2 Hours,Creative Design,中国四川省成都市,30.572269,104.066541,28800,67,623d8575-4804-4c90-8fa5-a809bb9c3198
+Chinese,English,1-2 Hours,Computer Science and Engineering,Beijing,39.904211,116.407395,28800,70,bf8c3f4b-0123-4004-9765-9498410f08cc
+Chinese,English,1-2 Hours,Social Science,Shanghai,31.230416,121.473701,28800,80,295db11d-514f-4949-ae88-534485a62d80
+Chinese,English,1-2 Hours,Computer Science and Engineering,Shanghai China,31.230416,121.473701,28800,60,4670ddd1-cb8f-4236-89e6-bc60c442f0ca
+Chinese,English,1-2 Hours,Computer Science and Engineering,"Beijing, china",39.904211,116.407395,-28800,0,951ddeb4-e0df-47c7-9d97-a2655994e90c
+Chinese,English,1-2 Hours,Business and Management,Beijing,39.904211,116.407395,28800,80,70fb19e1-b6e0-43fc-8aeb-e894a580c283
+German,English,1-2 Hours,Computer Science and Engineering,"Potsdam, Deutschland",52.3905689,13.0644729,3600,80,3f781ce5-5e0a-453c-902c-b7a3b54bf8f7
+English,English,1-2 Hours,Social Science,"Potsdam, Deutschland",52.3905689,13.0644729,-28800,40,1c19ed4f-36d6-49fc-b516-60060b3315a8
+German,English,1-2 Hours,Social Science,"Walldorf, Germany",49.3063689,8.6427693,7200,80,f94fa600-f592-42d2-a5c4-bb5bcfa9dbf7
+English,English,1-2 Hours,Creative Design,"Guwahati, Assam, India",26.1445169,91.7362365,21600,80,dc5e4067-c5ed-4622-8b4d-1a3d757e1b4a
+English,English,1-2 Hours,Computer Science and Engineering,"Potsdam, Germany",52.3905689,13.0644729,3600,80,cc626d33-8460-4e90-a95e-baaf35e9ca36
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, Georgia, USA",34.0753762,-84.2940899,-14400,80,0f0fcdf7-62b3-452e-bd72-87a88cf9a5c2
+English,English,1-2 Hours,Computer Science and Engineering,"Bengaluru, Karnataka, India",12.9715987,77.5945627,18000,80,a392b8fa-95c6-43a8-9746-ec0580fae526
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA 30022, USA",34.0753762,-84.2940899,-18000,67,c9bf5343-affd-4152-b4ef-3bb13ea9b31d
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,aa294832-bbc8-4959-99a7-0b487e615359
+Portuguese,English,1-2 Hours,Computer Science and Engineering,"São Leopoldo - RS, Brasil",-29.7549941,-51.150283,-10800,80,36629f33-0624-4e5f-9b1d-f88ac1dfcc23
+English,English,1-2 Hours,Computer Science and Engineering,"3820 Mansell Rd, Alpharetta, GA 30022, USA",34.0393158,-84.2918488,-14400,80,bf37c461-70c9-4ba4-bbf9-b47563f33ae2
+English,English,1-2 Hours,Computer Science and Engineering,"3820 Mansell Rd, Alpharetta, GA 30022, USA",34.0393158,-84.2918488,-18000,80,f35bf8a9-d743-4598-b67f-33f6eaf17a54
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,515756c9-adbd-439a-a2c1-2c5be353580e
+English,English,1-2 Hours,Computer Science and Engineering,Nigeria,9.081999,8.675277,3600,40,c61f3a29-0b69-457d-95e8-a2a3cc8ddc4f
+English,English,1-2 Hours,Computer Science and Engineering,Nigeria,9.081999,8.675277,3600,40,d9059c01-01f3-464d-a629-64154695bea5
+English,English,1-2 Hours,Computer Science and Engineering,"Fejér, Magyarország",47.1217932,18.5294815,3600,80,9c3e7725-9e02-47dc-88fe-677eb9648e7e
+English,English,1-2 Hours,Computer Science and Engineering,"00100 Helsinki, Finland",60.1733244,24.9410248,10800,80,f9995ba7-f41a-4b59-9636-0212fe44d77f
+Chinese,English,1-2 Hours,Other,Beijing,39.904211,116.407395,28800,60,51fc2447-e526-48c9-876b-f5cdd175f5da
+English,English,1-2 Hours,Business and Management,"1201 35th Ave, San Francisco, CA 94122, USA",37.7644953,-122.4946076,-28800,67,bd4d009f-2121-4022-81fd-5d69f14da61e
+Chinese,English,1-2 Hours,Business and Management,BEIJING,39.904211,116.407395,28800,80,9891f8b3-762c-421f-92f1-904dab39d23c
+Chinese,English,1-2 Hours,Business and Management,Hong Kong,22.396428,114.109497,28800,80,102ee874-6a4a-4f87-8f75-159b8c57b8b8
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,6460fd4f-334a-4f6a-af6c-e264a4c3fd76
+English,English,3-4 Hours,Computer Science and Engineering,"3820 Mansell Rd, Alpharetta, GA 30022, USA",34.0393158,-84.2918488,-14400,80,3d9bc8ab-6f9a-4388-8324-30c9e19ab514
+Chinese,English,3-4 Hours,Computer Science and Engineering,"DALIAN,CHINA",38.914003,121.614682,28800,33,72e97d76-cc90-4d78-b9a1-83fe6f60b305
+English,English,3-4 Hours,Other,"Iwo, Nigeria",7.6292088,4.1872178,3600,60,ee7ee4d8-f08d-4010-a799-0087b4f5adc8
+English,English,5-6 Hours,Computer Science and Engineering,"Székesfehérvár, Magyarország",47.1860262,18.4221358,3600,47,f3742975-ba09-4236-8beb-8e724207a890
+English,English,5-6 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,60,cea99ff9-0f01-44f1-b337-49d2c424ebf0
+German,English,5-6 Hours,Computer Science and Engineering,"St. Leon-Rot, Deutschland",49.2568614,8.6265334,7200,80,d62f6715-8439-4711-b37e-64d5fdf81208
+German,English,5-6 Hours,Computer Science and Engineering,"Dresden, Deutschland",51.0504088,13.7372621,3600,0,cc4396de-c803-4ba2-b235-1084450f5171
+Chinese,English,1-2 Hours,Computer Science and Engineering,中国辽宁省大连市大连理工大学软件学院,39.080842,121.816672,28800,47,aad8c798-765e-4e3b-9ca7-e18873a02a23
+English,English,1-2 Hours,Computer Science and Engineering,"shanghai, china",31.230416,121.473701,28800,0,b04c0037-7bde-48a7-b01c-4a145f576c99
+Chinese,English,1-2 Hours,Computer Science and Engineering,Dalian，China,38.914003,121.614682,28800,27,7aa5ac85-a504-4407-8671-a35d00a479cf
+English,English,1-2 Hours,Business and Management,"Pune, Maharashtra, India",18.5204303,73.8567437,21600,80,bc795966-a95f-44c3-bcd3-284e00b9d534
+English,English,1-2 Hours,Computer Science and Engineering,中国江苏省南京,32.060255,118.796877,28800,80,c03007bd-0bb4-4112-a6aa-4aabb273be89
+Russian,English,1-2 Hours,Other,"Минск, Беларусь",53.9045398,27.5615244,10800,67,b4ef0c5c-11f5-4226-aa29-464438953e29
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,80,eb4894e3-eef5-4b50-874b-e6b4b2e4b595
+English,English,1-2 Hours,Humanities,"Walldorf, Deutschland",49.3063689,8.6427693,7200,80,6d7e8dd1-9098-435e-8d10-168e62a728d7
+German,English,1-2 Hours,Computer Science and Engineering,"Berlin, Deutschland",52.5200066,13.404954,7200,0,3b3141ab-32f5-4ce4-9524-21376094f1fb
+German,English,1-2 Hours,Computer Science and Engineering,"Sankt Leon-Rot, Germany",49.2568614,8.6265334,3600,60,4c855f0b-e10b-4360-b6aa-6a161c08a478
+Chinese,English,1-2 Hours,Computer Science and Engineering,"Nanjing, Jiangsu, China",32.060255,118.796877,28800,40,92b2d0cc-4ebe-499e-a93e-a17051ce27de
+English,English,1-2 Hours,Computer Science and Engineering,"Osun State, Nigeria",7.5875843,4.5624426,3600,60,774bbed1-20cf-47d0-b1c7-7858fc05efd7
+German,English,1-2 Hours,Business and Management,"Ratingen, Deutschland",51.2964148,6.8401844,3600,80,c3081ab9-70cd-4ec7-af9f-949d4b0898d9
+German,English,1-2 Hours,Computer Science and Engineering,"München, Deutschland",48.1351253,11.5819806,7200,80,c2ae5b77-68cc-46eb-b87e-8b7408b77923
+Chinese,English,1-2 Hours,Business and Management,"Beijing, China",39.904211,116.407395,28800,60,33364e95-9e98-47eb-988c-679ef4a6649e
+English,English,1-2 Hours,Computer Science and Engineering,"Székesfehérvár, Magyarország",47.1860262,18.4221358,3600,67,9618413e-347b-483d-869d-9f3c6b127b19
+English,English,1-2 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,18000,80,ea5c9d5e-a392-44d2-af83-e56454a23680
+English,English,1-2 Hours,Computer Science and Engineering,"Leimen, Germany",49.3490898,8.6878851,7200,67,1c5e8160-420b-4a8c-bfa4-37a392d0e3f4
+English,English,1-2 Hours,Computer Science and Engineering,"Atlanta, GA, USA",33.7489954,-84.3879824,-18000,80,79e22386-a6fa-4edb-80b1-9452764117c1
+English,English,1-2 Hours,Business and Management,"Vancouver, BC, Canada",49.2827291,-123.1207375,-28800,60,508ae93a-564a-42c1-8f00-ad5b6fba28cd
+Chinese,English,1-2 Hours,Other,beijing,39.904211,116.407395,28800,70,dd2deb9a-fea5-409a-97f4-6595ad57ee15
+Chinese,English,1-2 Hours,Computer Science and Engineering,Shanghai,31.230416,121.473701,28800,60,f0342e3a-e6c9-43a5-9e13-3f0de0469812
+English,English,3-4 Hours,Business and Management,beijing,39.904211,116.407395,28800,40,4f4b3fdc-76cb-4c12-9a02-78d7d07ba90d
+Chinese,English,3-4 Hours,Other,"Nanjing, Jiangsu Province, China",32.060255,118.796877,28800,80,49921b5b-b9cb-43bd-a30e-3f5f2fbc35ae
+English,English,3-4 Hours,Computer Science and Engineering,"Karachi, Pakistan",24.8614622,67.0099388,18000,80,eeff8f87-f373-4cd6-ade4-c79fe862f992
+Chinese,English,1-2 Hours,Business and Management,"Beijing, China",39.904211,116.407395,28800,60,a6bfba91-d86a-4d71-a011-2 Hours845c6be5461
+Russian,English,1-2 Hours,Social Science,"Минск, Беларусь",53.9045398,27.5615244,10800,47,76a6dbab-8a0c-4466-b492-ac87f27b5c65
+English,English,3-4 Hours,Computer Science and Engineering,Nigeria,9.081999,8.675277,-3600,0,f32e3024-4d11-4db5-882d-4f7d96c96b70
+German,English,3-4 Hours,Social Science,"Leipzig, Deutschland",51.3396955,12.3730747,7200,80,d1edfb12-1a1e-4051-a284-8a56b79c0319
+Chinese,English,3-4 Hours,Computer Science and Engineering,中国江苏省南京市鼓楼区广州路南京大学,32.051503,118.780957,28800,80,26279664-33ea-4e6f-a473-524716a0ef82
+Chinese,English,3-4 Hours,Computer Science and Engineering,中国江苏省南京市鼓楼区广州路南京大学综合楼 邮政编码: 210000,32.051503,118.780957,28800,80,36add5c7-a29e-4b68-b9ac-3a1ef7aa9221
+Russian,English,3-4 Hours,Social Science,"Белорусский государственный экономический университет, Партизанский просп. 26, Минск 220070, Беларусь",53.876727,27.604977,10800,0,5f223af3-74dd-4841-bf30-4706132e2ae6
+English,English,3-4 Hours,Business and Management,"New Delhi, Delhi, India",28.6139391,77.2090212,21600,60,c2583d65-89b3-416f-b8ea-9f9077383cbe
+English,English,3-4 Hours,Computer Science and Engineering,Magyarország,47.162494,19.503304,3600,47,997c1c92-58a8-4a5e-b04e-79921f14cb0a
+Russian,English,3-4 Hours,Business and Management,"Minsk, Belarus",53.9045398,27.5615244,10800,47,3a3d7080-7465-4794-ba0c-bb75e13b09e4
+English,English,3-4 Hours,Computer Science and Engineering,"Alpharetta, GA, USA",34.0753762,-84.2940899,-14400,60,9dda2388-5676-45ff-8fb6-d90b9e01d2dc
+German,English,3-4 Hours,Business and Management,"Walldorf, Deutschland",49.3063689,8.6427693,7200,0,7909dd32-b806-4ffd-a8c1-ed40302a522a
+Chinese,English,3-4 Hours,Computer Science and Engineering,Beijing,39.904211,116.407395,28800,80,d660065f-1583-42cd-88b6-8bd943546a11
+English,English,3-4 Hours,Computer Science and Engineering,"Budapest, Magyarország",47.497912,19.040235,3600,80,5b2d6a25-b4da-4f19-b107-039d2a3be777
+Russian,English,3-4 Hours,Business and Management,"Минск, Беларусь",53.9045398,27.5615244,10800,67,88e51547-bc91-40ae-a644-b847daf7dd6b
+English,English,3-4 Hours,Computer Science and Engineering,"Georgia, USA",32.1656221,-82.9000751,-14400,80,8acfce1b-8f6b-4181-b52d-0436a887a63e
+English,English,3-4 Hours,Computer Science and Engineering,"3820 Mansell Rd, Alpharetta, GA 30022, USA",34.0393158,-84.2918488,-18000,67,d8d1a419-d2d8-45e3-9181-fad724c8f45b
+English,English,3-4 Hours,Computer Science and Engineering,"3820 Mansell Rd, Alpharetta, GA 30022, USA",34.0393158,-84.2918488,-18000,80,b34705d5-711a-41f3-af86-0162330cfea8
+English,English,3-4 Hours,Computer Science and Engineering,"Székesfehérvár, Magyarország",47.1860262,18.4221358,3600,0,9aa208f4-df6f-42f3-9c30-8d6dae6543e3
+English,English,3-4 Hours,Business and Management,"San Francisco, CA, USA",37.7749295,-122.4194155,-28800,0,cd0cd309-e242-4ac8-ac65-529482a3a8b1
+English,English,3-4 Hours,Computer Science and Engineering,"Balige, Sibola Hotangsas, Balige, Toba Samosir, Sumatera Utara, Indonesia",2.3337119,99.083252,25200,0,709e64cf-75f9-4e10-a09b-3102a1d76134
+German,English,3-4 Hours,Computer Science and Engineering,"Bad Dürkheim, Germany",49.4598369,8.1654232,7200,80,1ad3812a-9238-4954-86af-c8190f735917
+English,English,3-4 Hours,Computer Science and Engineering,"Nuremberg, Germany",49.45203,11.07675,7200,80,8e2e3b2e-5e5e-418e-8fe2-065fcd8a3838
+Russian,English,3-4 Hours,Business and Management,"Минск, Беларусь",53.9045398,27.5615244,10800,67,13eb91bc-ba43-436f-a2b5-f00b3fcb842b
+Russian,English,3-4 Hours,Business and Management,"Минск, Беларусь",53.9045398,27.5615244,10800,67,580c3639-dae9-4b2e-8572-d16f12f65c26
+English,English,3-4 Hours,Computer Science and Engineering,"Nürnberg, Deutschland",49.45203,11.07675,3600,37,3ab3ab78-f609-4f03-b7e6-03e26e9159ba
+English,English,3-4 Hours,Computer Science and Engineering,"Nuremberg, Germany",49.45203,11.07675,7200,0,03c739a0-00e6-40e3-bdba-59b91c5a9121
+English,English,3-4 Hours,Computer Science and Engineering,"Székesfehérvár, Magyarország",47.1860262,18.4221358,3600,80,c53a88a6-3c20-42d5-b0a9-93e1c1710395
+English,English,3-4 Hours,Computer Science and Engineering,"Panchkula, Haryana, India",30.6942091,76.860565,18000,53,148b5252-59e2-495a-b42a-48e4163a9dab
+English,English,3-4 Hours,Computer Science and Engineering,India,20.593684,78.96288,18000,47,5799129d-259e-4680-b094-786e427a8074
+English,English,5-6 Hours,Computer Science and Engineering,Iwo,7.6292088,4.1872178,7200,67,7426574c-322f-41e2-884b-97c9a9a76bb7
+English,English,5-6 Hours,Computer Science and Engineering,Dubai - Dubai - United Arab Emirates,25.2048493,55.2707828,14400,80,fc504008-fdbd-4bcb-a8b0-082aa5525fc7
+Russian,English,5-6 Hours,Computer Science and Engineering,"Белорусский государственный экономический университет, Партизанский просп. 26, Минск 220070, Беларусь",53.876727,27.604977,10800,67,f6642e63-49e2-4e96-af78-fd30245507f0
+English,English,5-6 Hours,Business and Management,Beijing,39.904211,116.407395,28800,80,02382a77-3d00-490e-9ef4-887136b4900a
+Chinese,English,5-6 Hours,Computer Science and Engineering,中国江苏省南京市鼓楼区汉口路22号南京大学 邮政编码: 210000,32.066336,118.76979,28800,80,776e0233-c4dd-4b55-ba50-2f93d1d7e379
+English,English,5-6 Hours,Computer Science and Engineering,Germany,51.165691,10.451526,3600,80,bd89b7af-d817-48cd-bc5e-4dd27ade9416
+Russian,English,5-6 Hours,Social Science,"Белорусский государственный экономический университет, Партизанский просп. 26, Минск 220070, Беларусь",53.876727,27.604977,10800,27,78ebd1b8-5ca6-441e-aa31-d5d8e5d4c65d
+English,English,5-6 Hours,Computer Science and Engineering,"Mougins, France",43.6023319,7.006491,7200,80,e8429bd9-a7ff-4744-b8ea-ccd1eec30c57
+English,English,5-6 Hours,Computer Science and Engineering,Nigeria,9.081999,8.675277,3600,80,31788fb8-34cb-467a-b7b7-05db96c710a3
+English,English,5-6 Hours,Other,Romania,45.943161,24.96676,10800,60,3e938c68-dc6f-4a7c-a061-63115689425f
+Chinese,English,5-6 Hours,Business and Management,"Beijing, China",39.904211,116.407395,28800,40,9d98d4d4-625d-4e1f-a925-eff4a3f6d3dd
+Chinese,English,5-6 Hours,Business and Management,"Shanghai, China",31.230416,121.473701,28800,60,cecfbf1d-4b03-4464-9380-632848c7fdad
+English,English,5-6 Hours,Computer Science and Engineering,Nigeria,9.081999,8.675277,3600,60,f9725b82-1487-4f73-b0b3-fce82b25d12c
+Chinese,English,5-6 Hours,Computer Science and Engineering,"Nanjing, Jiangsu, China",32.060255,118.796877,28800,60,305ce0a1-6b74-459f-87a8-5d77440ed586
+Chinese,English,5-6 Hours,Business and Management,"Beijing, Beijing, China",39.904211,116.407395,28800,60,84609c21-eb3f-41bd-b484-c936bcba18f0

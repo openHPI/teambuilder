@@ -1,0 +1,65 @@
+$enrollment-bg: $light-gray;
+$enrollment-lines: $gray;
+$enrollment-terms: darken($enrollment-bg, 10%);
+
+.enrollment {
+  padding: 20px;
+  background-color: $enrollment-bg;
+  border-radius: 10px;
+
+  .feature {
+    @include form-group;
+  }
+
+  .buttons {
+    border-top: 3px solid $enrollment-lines;
+    padding-top: 15px;
+    @extend %form-buttons;
+
+    .reset {
+      @include danger-button;
+    }
+  }
+
+  .terms {
+    background-color: $enrollment-terms;
+    border: 2px solid darken($enrollment-terms, 10%);
+    padding: 15px;
+    margin-bottom: 10px;
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#location_map {
+  height: 250px;
+}
+
+.ui-menu .ui-menu-item {
+  text-align: left;
+  font-weight: normal;
+
+  a.ui-state-hover {
+    border: 1px solid red;
+    background: #FFBFBF;
+    color: black;
+    font-weight:bold;
+  }
+}
+
+td a img {
+  width: 15px;
+  margin: 3px;
+}
+
+.pagination {
+  margin-left: 26% !important;
+
+  & > li {
+    & > a, & > span {
+      background-color: #428bca !important;
+    }
+  }
+}

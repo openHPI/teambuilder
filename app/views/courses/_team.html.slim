@@ -1,0 +1,44 @@
+.team class=(team.approved ? 'team_approved' : '')
+  a id="team-#{team.id}"
+  h6.header
+    label for="team-#{team.id}-members" #{team.name}
+    - unless team.members.empty?
+      ul.facts
+        - @course.features.only_grouping_enabled.facts_for(team.members).each do |fact|
+          - color, info = fact
+          li class=color = info
+        li.team-count = "#{team.members.size}"
+  input.toggle-team-members id="team-#{team.id}-members" type="checkbox" checked=@course_teams.open?(team)
+
+  - if team.members.empty?
+    .delete-team
+      | This team is empty.
+      input type="submit" name="delete_team[#{team.id}]" title="Delete this team forever" value="Delete?"
+  - else
+    - unless team.new_record?
+      .approval
+        - if team.approved?
+          | This team was manually approved.
+        input type="submit" name="toggle_team_approval[#{team.id}]" value=(team.approved? ? 'Undo.' : 'Mark this team as approved.')
+      .note-field
+        = text_area_tag "note[#{team.id}]", team.note
+        input type="submit" value='Save Note' name="change_team_note[#{team.id}]" title="Save the team note"
+    ul.members
+      - team.members.each do |member|
+        li
+          - if @course.can_manipulate_teams?
+            = check_box_tag "members[#{member.id}]", "1", false, class: 'select-member'
+
+          - if @course.platform.user_link?
+            a.id target="_blank" href=@course.platform.user_link(member) #{member.name || member.id}
+          - else
+            span.id #{member.name || member.id}
+
+          - unless member.email.blank?
+            span.email = member.email
+
+          - if member.score
+            span.score = "#{member.score.round}%"
+
+          - @course.features.qualifiers_for(member).each do |qualifier|
+            span.qualifier title=qualifier[:detail] = qualifier[:text]

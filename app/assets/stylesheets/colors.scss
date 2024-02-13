@@ -1,0 +1,21 @@
+$gray: #d3d3d3;
+$medium-gray: #e6e6e6;
+$light-gray: #f9f9f9;
+$dark-gray: #a0a0a0;
+$darker-gray: #606060;
+
+$red-text: #a94442;
+$red-bg: #f2dede;
+$red-border: #ebccd1;
+
+$yellow-text: #8a6d3b;
+$yellow-bg: #fcf8e3;
+$yellow-border: #faebcc;
+
+$green-text: #3c763d;
+$green-bg: #dff0d8;
+$green-border: #d6e9c6;
+
+$light-green-border: #d6e9c6;
+$light-green-fill: lighten($light-green-border, 10%);
+$light-green-accent: darken($light-green-border, 10%);

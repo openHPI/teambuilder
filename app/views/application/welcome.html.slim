@@ -1,0 +1,10 @@
+#welcome
+  .teaser
+    h1 TeamBuilder
+    p Nothing to see here. Move along.
+
+  .menu
+  - if current_user.admin?
+    p Hello, Admin! Why don't you head to the #{link_to 'course list', courses_path}?
+  - elsif current_user.guest?
+    p = link_to 'Admin login', login_path

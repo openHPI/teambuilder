@@ -1,0 +1,44 @@
+.group-settings {
+  @include outer-container;
+
+  .controls {
+    @include media($large) {
+      @include span-columns(8);
+    }
+  }
+
+  &-preview {
+    @include media($large) {
+      @include span-columns(4);
+    }
+
+    background-color: $light-gray;
+    padding: 10px;
+  }
+}
+
+$preview-border-color: $light-green-border;
+$preview-total-color: $light-green-fill;
+$preview-passed-color: $light-green-accent;
+
+#preview-graph {
+  height: 30px;
+  border: 2px solid $preview-border-color;
+  background-color: $preview-total-color;
+
+  .bar {
+    height: 26px;
+    max-width: 100%;
+    background-color: $preview-passed-color;
+    float: left;
+
+    transition: width 0.5s ease;
+  }
+}
+
+.preview-stats {
+  margin-bottom: 20px;
+
+  @include display(flex);
+  @include justify-content(space-between);
+}

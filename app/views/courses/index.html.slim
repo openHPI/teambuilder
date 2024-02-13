@@ -1,0 +1,86 @@
+.row
+  .filter-line
+    form#filter_form
+      input type="text" id="search_input" placeholder="Filter courses.."
+      .buttons
+        = select_tag :platform, options_for_select(@platforms), include_blank: 'Platform', class: 'dropdown_platform'
+        = select_tag :state, options_for_select(@states), include_blank: 'Status', class: 'dropdown_status'
+        input type='reset' class="button-primary" value='Clear'
+
+  table id="course_table"
+    thead
+      tr
+        th width="25%" Name
+        th width="10%" Platform
+        th width="30%" Credentials
+        th width="20%" Status
+        th width="15%" Actions
+    tbody
+      - @courses.each do |course|
+        tr class=('copied' if course.copied?)
+          td = link_to course.name, course_path(course)
+          td = course.platform_id
+          td
+            = "Key: #{course.auth_key}"
+            br
+            = "Secret: #{course.auth_secret}"
+          td
+            = course.human_state
+          td
+            - if course.can_copy?
+              = form_for course, url: copy_course_path(course), html: {method: 'post'}  do |f|
+                = hidden_field :course, :name, value: "Copy of #{course.name}", class: 'course_name'
+                = submit_tag 'Copy Course', name: 'copy', class: 'copy', title: 'This will use the existing course data from this course. And create an identical copy for testing purposes.'
+            - if course.can_delete_course?
+              = form_for course, url: course_path(course), html: {method: 'delete'} do |f|
+                = submit_tag 'Delete Course', name: 'delete_course', class: 'reset', title: 'This will delete the copied course'
+
+
+.row
+  = link_to 'New Course', new_course_path, class: 'button button-primary'
+
+javascript:
+
+  function filterTable(name, platform, state){
+
+    // Parsing Strings
+    name = name.toUpperCase();
+    platform = platform.toUpperCase();
+    state = state.toUpperCase();
+    if (state == "PUBLISHED")
+      state = "PUBLIC";
+    else if (state == 'COPIED')
+      state = 'COPY';
+
+    // Filtering the table
+    table = document.getElementById("course_table");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      tdname = tr[i].getElementsByTagName("td")[0];
+      tdstate = tr[i].getElementsByTagName("td")[3];
+      tdplatform = tr[i].getElementsByTagName("td")[1];
+      if(tdname) {
+        if (($(tdname).text().toUpperCase().indexOf(name) > -1) &&
+          ($(tdstate).text().toUpperCase().indexOf(state) > -1) &&
+          ($(tdplatform).text().toUpperCase().indexOf(platform) > -1))
+          tr[i].style.display = "";
+        else
+          tr[i].style.display = "none";
+      }
+    }
+  }
+
+  var watchInput = Rx.Observable.combineLatest(watchInputChanges('#search_input'),
+                                               watchInputChanges('.dropdown_platform'),
+                                               watchInputChanges('.dropdown_status'),
+                                               watchReset('#filter_form').delay(0));
+
+  watchInput.subscribe(
+    function() {
+      var name = $('#search_input').val();
+      var platform = $('.dropdown_platform').val();
+      var state = $('.dropdown_status').val();
+      filterTable(name, platform, state);
+    });
+
+

@@ -1,0 +1,321 @@
+.teams {
+  @include outer-container;
+
+  &-list {
+    @include span-columns(9);
+
+    .orphans {
+      margin-bottom: 50px;
+    }
+  }
+
+  .list-controls {
+    @include clearfix;
+    margin-bottom: 10px;
+
+    .filters {
+      float: left;
+      width: 300px;
+
+      label {
+        font-weight: normal;
+
+        select {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .actions {
+      float: right;
+      text-align: right;
+      padding: 0.4rem 0.6rem;
+
+      * {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .buttons {
+    @include span-columns(3);
+
+    // Let the buttons stay in place when scrollling down the long list of team members
+    position: sticky;
+    top: 10px;
+
+    .reset {
+      margin-top: 25px;
+      @include danger-button;
+    }
+
+    input, select, .button {
+      width: 100%;
+    }
+
+    // Little form groups
+    fieldset {
+      background-color: $light-gray;
+      border-radius: 5px;
+      padding: 10px;
+
+      * {
+        margin: 0;
+      }
+
+      & > * + * {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.team {
+  margin-bottom: 1em;
+
+  .header {
+    border: 3px solid $gray;
+    padding: 5px 10px;
+    font-size: 1.3em;
+
+    label {
+      text-transform: uppercase;
+    }
+
+    &, & label {
+      cursor: pointer;
+      margin: 0;
+    }
+
+    position: relative;
+
+    .facts {
+      pointer-events: none;
+      position: absolute;
+      list-style: none;
+      top: 8px;
+      right: 5px;
+
+      font-size: 0.8em;
+
+      li {
+        display: inline-block;
+        margin-left: 10px;
+        background-color: $gray;
+        color: white;
+        padding: 0 7px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        text-overflow: ellipsis;
+        max-width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &.green {
+          color: $green-text;
+          background-color: $green-bg;
+          border: 1px solid $green-border;
+        }
+
+        &.yellow {
+          color: $yellow-text;
+          background-color: $yellow-bg;
+          border: 1px solid $yellow-border;
+        }
+
+        &.red {
+          color: $red-text;
+          background-color: $red-bg;
+          border: 1px solid $red-border;
+        }
+      }
+
+      .team-count {
+        // TODO: Little icon for head count
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &.team_approved .header {
+    border-color: $green-text;
+
+    label {
+      color: $green-text;
+    }
+
+    .facts {
+      // Overwrite the yellow and red bubbles to appear as green when the team was manually approved
+      .yellow, .red {
+        color: $green-text;
+        background-color: $green-bg;
+        border: 1px solid $green-border;
+      }
+    }
+  }
+
+  .delete-team {
+    border: 1px solid $gray;
+    margin: 0;
+    padding: 10px;
+    color: $dark-gray;
+    font-weight: bold;
+    text-align: center;
+
+    form {
+      display: inline;
+      margin: 0;
+      margin-left: 5px;
+    }
+
+    input {
+      display: inline;
+      margin: 0;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+
+      text-transform: none;
+      letter-spacing: normal;
+
+      color: red;
+
+      &:hover {
+        color: darken(red, 20%);
+      }
+    }
+  }
+
+  .approval {
+    border: 1px solid $gray;
+    margin: 0;
+    font-size: 0.9rem;
+    color: $dark-gray;
+    font-weight: bold;
+    text-align: center;
+
+    background-color: $green-bg;
+
+    form {
+      display: inline;
+      margin: 0;
+      margin-left: 5px;
+    }
+
+    input {
+      display: inline;
+      margin: 0;
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.9rem;
+      line-height: 1;
+      font-weight: bold;
+      height: 1rem;
+      cursor: pointer;
+
+      text-transform: none;
+      letter-spacing: normal;
+
+      color: $green-text;
+
+      &:hover {
+        color: darken($green-text, 20%);
+      }
+    }
+  }
+
+  &.team_approved .approval {
+    background-color: $yellow-bg;
+
+    input {
+      color: $yellow-text;
+
+      &:hover {
+        color: darken($yellow-text, 20%);
+      }
+    }
+  }
+
+  .note-field {
+    textarea {
+      width:100%;
+      margin-bottom: 0.3em;
+    }
+    input[type=submit] {
+      margin-bottom: 0.3em;
+    }
+  }
+
+  .members {
+    border: 1px solid $gray;
+    border-bottom-width: 0px;
+    list-style: none;
+    margin: 0;
+
+    li {
+      padding: 10px 10px 10px 30px;
+      margin: 0;
+      border-bottom: 1px solid $gray;
+
+      & > * {
+        margin-right: 10px;
+      }
+
+      .select-member {
+        float: left;
+        margin: 5px 0 0 -20px;
+      }
+
+      .id {
+        font-weight: bold;
+      }
+
+      .qualifier {
+        display: inline-block;
+        margin-right: 10px;
+        background-color: $medium-gray;
+        color: $darker-gray;
+        border-radius: 3px;
+        padding: 0 3px;
+        font-size: 0.9em;
+      }
+
+      form, select {
+        margin: 0;
+        padding: 0;
+        height: auto;
+      }
+
+      select {
+        width: 100%;
+      }
+
+      @include clearfix;
+    }
+  }
+
+  .toggle-team-members {
+    display: none;
+
+    & ~ .members, & ~ .approval, & ~ .note-field {
+      overflow: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:checked ~ .members, &:checked ~ .approval, &:checked ~ .note-field {
+      opacity: 1;
+      max-height: 1000px;
+      overflow-y: auto;
+    }
+    &:checked ~ .note-field {
+      margin: 1em 0;
+    }
+  }
+}

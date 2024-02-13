@@ -1,0 +1,26 @@
+= form_tag({action: 'create', platform_id: params[:platform_id]}) do |f|
+  - if @errors
+    .row
+      figure.error-box
+        figcaption = "#{pluralize(@errors.count, 'error')} prohibited this course from being saved:"
+        ul
+          - @errors.full_messages.each do |message|
+            li = message
+
+  - if @platform.courses?
+    .row
+      = select_tag :course, options_for_select(@courses.invert), include_blank: 'Select course...', required: true
+  - else
+    .row
+      label Name
+      = text_field_tag :name, '', required: true
+    .row
+      label Auth Key
+      = text_field_tag :auth_key, '', required: true
+    .row
+      label Auth Secret
+      = text_field_tag :auth_secret, '', required: true
+
+  .row.buttons
+    input.button-primary type="submit" value="Save"
+    |  #{link_to 'Back', new_course_path, class: 'button'}

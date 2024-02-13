@@ -1,0 +1,97 @@
+- if @course.features.local_teams?
+  - content_for :head
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.GOOGLE_MAPS_KEY}&libraries=places"
+
+= form_tag({controller: 'enrollments', action: 'create', course_id: @course.id}, class: 'enrollment') do |f|
+
+  - unless @errors.empty?
+    figure.error-box
+      figcaption Errors
+      p Please fix the following errors:
+      ul
+        - @errors.each do |_, error|
+          li = error
+
+  - if @preview
+    figure.info-box
+      figcaption Preview
+      p This is what the enrollment form will look like to your participants.
+
+  - if @previous.any?
+    figure.info-box
+      figcaption Welcome back!
+      p It looks like you have already filled out this form. We have populated all fields with your previously submitted data. Until the deadline, you can change this data here.
+
+  - if @course.features.language_teams?
+    .feature class=('has-error' if @errors.has_key? :preferred_language)
+      label Your preferred language when talking
+      .control
+        = select_tag :preferred_language, options_for_select(TeamBuilder::CourseFeatures::LanguageTeams::LANGUAGES, @previous[:preferred_language] || params[:preferred_language]), include_blank: 'Select Language', class: 'form-control', required: true
+        p.help
+          | We will try to match you with other participants who speak this language. If we are unable to do so, we will use the course language (English) as the default.
+  - if @course.features.local_teams?
+    .feature class=('has-error' if @errors.has_key? :location)
+      label Your current location
+      .control
+        = text_field_tag :location, @previous[:location] || params[:location], class: 'form-control', required: true
+        = hidden_field_tag :location_lat, @previous[:location_lat] || params[:location_lat]
+        = hidden_field_tag :location_lng, @previous[:location_lng] || params[:location_lng]
+        .map-container
+          #location_map
+  .feature class=('has-error' if @errors.has_key? :time_zone)
+    label Your current time zone
+    .control
+      = select_tag :time_zone, options_for_select(TeamBuilder::CourseFeatures::Timezone::TIMEZONES.invert, @previous[:time_zone] || params[:time_zone]), include_blank: 'Select Time Zone', class: 'form-control', required: true
+  - if @course.features.group_by_expertise?
+    .feature class=('has-error' if @errors.has_key? :area_of_expertise)
+      label Your area of expertise
+      .control
+        = select_tag :area_of_expertise, options_for_select(TeamBuilder::CourseFeatures::AreaOfExpertise::OPTIONS, @previous[:area_of_expertise] || params[:area_of_expertise]), include_blank: 'Select Expertise', class: 'form-control', required: true
+  - if @course.features.group_by_gender?
+    .feature class=('has-error' if @errors.has_key? :gender)
+      label Your gender
+      .control
+        - TeamBuilder::CourseFeatures::Gender::GENDERS.each do |gender|
+          label.label-inline
+            = radio_button_tag :gender, gender, (@previous[:gender] || params[:gender]) == gender, required: true
+            = " #{gender}"
+  - if @course.features.group_by_age?
+    .feature class=('has-error' if @errors.has_key? :age)
+      label Your age
+      .control
+        = select_tag :age, options_for_select(TeamBuilder::CourseFeatures::Age::GROUPS, @previous[:age] || params[:age]), include_blank: 'Select Age Group', class: 'form-control', required: true
+  - if @course.features.group_by_commitment?
+    .feature class=('has-error' if @errors.has_key? :commitment)
+      label How much time you will commit per week
+      .control
+        = select_tag :commitment, options_for_select(TeamBuilder::CourseFeatures::Commitment::GROUPS, @previous[:commitment] || params[:commitment]), include_blank: 'Select Commitment Group', class: 'form-control', required: true
+  - if @course.features.preferred_tasks?
+    - @course.custom_preferences.each do |pt|
+      .feature class=('has-error' if @errors.has_key? pt.task_identifier)
+        label = pt.name
+        .control
+          - pt.tasks.each_with_index do |task, index|
+            div.radio
+              label.label-inline
+                = radio_button_tag pt.task_identifier, index, (@previous[pt.task_identifier.to_sym] || params[pt.task_identifier.to_sym]) == index.to_s, required: true
+                = " #{task}"
+  - if @course.features.accept_terms?
+    .feature class=('has-error' if @errors.has_key? :accept_terms)
+      label Terms of Use
+      .control
+        .form-control-static.terms
+          == simple_format @course.features.accept_terms.text
+        label.label-inline
+          = check_box_tag :accept_terms, 'yes', @previous[:accept_terms] || params[:accept_terms], required: true
+          |  I accept the terms
+
+  - if @course.published? && current_user.can_enroll?(@course)
+    .buttons
+      = submit_tag 'Submit', class: 'button-primary'
+      - if @enrollment
+        = button_to 'Cancel Participation', course_enrollments_path(@course, @enrollment), class: 'reset', method: :delete, title: "Cancel application for the team work. You won't be assigned to any team."
+
+  - elsif !current_user.can_submit?
+    figure.info-box
+      figcaption Deadline has passed
+      p The application deadline to participate in the team work has passed. You can view the data you previously entered, but you cannot make any changes.

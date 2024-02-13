@@ -1,0 +1,14 @@
+nav.course-nav
+  h3.course-nav-name
+    = @course.name
+
+  .course-nav-state
+    = @course.human_state
+
+  ul.course-nav-sections
+    li class=(current_page?(new_course_enrollments_path @course) ? 'active' : '')
+      = link_to 'Preview', new_course_enrollments_path(@course)
+    li class=(current_page?(course_path @course) ? 'active' : '')
+      = link_to 'Settings', course_path(@course)
+    li class=(current_page?(teams_course_path @course) ? 'active' : '')
+      = link_to 'Teams', teams_course_path(@course)

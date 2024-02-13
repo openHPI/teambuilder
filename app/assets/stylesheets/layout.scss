@@ -1,0 +1,96 @@
+$admin-nav-bg: lighten(#000, 20%);
+
+body {
+  margin: 0;
+  padding: 10px 0 0;
+}
+
+.admin-nav {
+  margin-top: -10px;
+  border-top: 5px solid $admin-nav-bg;
+  text-align: center;
+
+  &-container {
+    background-color: lighten(#000, 20%);
+    color: darken(#fff, 20%);
+    display: inline-block;
+    padding: 5px 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    a {
+      margin-left: 20px;
+    }
+  }
+}
+
+.course-nav {
+  border-bottom: 3px solid $gray;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  * {
+    margin: 0;
+  }
+
+  & > * {
+    flex: auto;
+  }
+
+  &-name {
+    padding: 15px;
+    float: left;
+    font-size: 1.6rem;
+    letter-spacing: normal;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  &-state, &-sections {
+    align-self: flex-end;
+    flex-shrink: 0;
+  }
+
+  &-state {
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    border: 1px solid currentcolor;
+    border-radius: 4px;
+    font-weight: bold;
+    color: $dark-gray;
+  }
+
+  &-sections {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin-left: 10px;
+      position: relative;
+
+      &.active:after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 50%;
+        margin-left: -10px;
+        border: 10px solid transparent;
+        border-bottom-color: $gray;
+      }
+
+      a {
+        display: inline-block;
+        padding: 15px 10px;
+
+        &:hover {
+          background-color: lighten($gray, 10%);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @include clearfix;
+  margin-bottom: 15px;
+}

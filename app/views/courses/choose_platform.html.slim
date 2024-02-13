@@ -1,0 +1,6 @@
+= form_tag({controller: 'courses', action: 'new'}, method: 'get') do |f|
+  .row
+    label Choose platform
+    = select_tag :platform_id, options_for_select(Platform.all), include_blank: 'Select platform...', required: true
+  .row
+    input.button-primary type="submit" value="Create Course"

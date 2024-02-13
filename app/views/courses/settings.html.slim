@@ -1,0 +1,96 @@
+- if @course.locked?
+  figure.info-box
+    figcaption Locked
+    p The settings are locked. You can view, but not change them.
+
+.explanation
+  p
+    | Below, you can choose what information course participants will have to provide to sign up for team assignment.
+    |  The settings are listed in order of grouping priority.
+
+= form_tag({action: 'update'}, method: 'put') do |f|
+  .course-settings
+    .course-settings-setting.js-toggle-setting.js-store-orig-value
+      h5.heading Terms of Service
+      label.toggle title="Click to toggle"
+        = check_box_tag 'features[accept_terms]', 'yes', @course.features.enabled?('accept_terms'), disabled: @course.locked?
+        | Enable
+      .settings
+        p.help Users will have to confirm these terms before they can sign up.
+        label for="terms" Terms
+        = text_area_tag :terms, @course.features.accept_terms.text, disabled: @course.locked?
+
+    = render partial: 'plain_setting', locals: {title: 'Language', type: 'language_teams', locked: @course.locked?}
+
+    .course-settings-setting.js-toggle-setting.js-store-orig-value.enabled
+      h5.heading Timezone
+
+    = render partial: 'plain_setting', locals: {title: 'Location', type: 'local_teams', locked: @course.locked?}
+    = render partial: 'plain_setting', locals: {title: 'Expertise', type: 'group_by_expertise', locked: @course.locked?}
+    = render partial: 'plain_setting', locals: {title: 'Gender', type: 'group_by_gender', locked: @course.locked?}
+    = render partial: 'plain_setting', locals: {title: 'Age', type: 'group_by_age', locked: @course.locked?}
+    = render partial: 'plain_setting', locals: {title: 'Commitment', type: 'group_by_commitment', locked: @course.locked?}
+
+    - @course.custom_preferences.each_with_index do |pt, i|
+      - input_name_tasks = "preferred_tasks[#{i}][tasks][]"
+      - input_name_name = "preferred_tasks[#{i}][name]"
+      .course-settings-setting.js-toggle-setting.js-store-orig-value.custom-preference data-index=i
+        h5.heading = "Course-specific preference #{i + 1}"
+        label.toggle title="Click to toggle"
+          = check_box_tag 'features[preferred_tasks]', 'yes', @course.features.enabled?('preferred_tasks'), disabled: @course.locked?
+          | Enable
+        .settings
+          p.help List course specific criteria, such as tasks, schools or companies, specific locations, focus groups etc. Learners will be grouped based on their choice.
+
+          input type='hidden' name="preferred_tasks[#{i}][id]" value=pt.id
+          label for=input_name_name Name
+          - if @course.locked?
+            input type='text' name=input_name_name value=pt.name disabled='disabled'
+          - else
+            input type='text' name=input_name_name value=pt.name
+
+          label Options
+          ul.list-group.preferred-tasks data-task-name=input_name_tasks
+            - pt.tasks.each do |task|
+              li.list-group-item.task
+                input type="hidden" name=input_name_tasks value=task
+                = task
+                - unless @course.locked?
+                  a.remove href="#" title="Remove this option" Remove
+            - unless @course.locked?
+              li.list-group-item.new-task
+                input placeholder="Enter new option"
+    - unless @course.locked?
+      .course-settings-setting#new-setting
+        .buttons
+          button type='button' Add course-specific preference
+
+  - unless @course.locked?
+    .settings-buttons
+      .buttons
+        = submit_tag 'Save', class: 'button-primary'
+        = ' '
+        = submit_tag 'Publish settings', name: 'publish', data: {confirm: 'Are you sure? This will permanently lock the course settings. Please make sure you are content with and have saved the current settings.'}
+
+script#template-new-task type="text/template"
+  li.list-group-item.task
+    input type="hidden" name="{{name}}" value="{{task}}"
+    | {{task}}
+    a.remove href="#" title="Remove this option" Remove
+
+script#template-new-setting type="text/template"
+  .course-settings-setting.js-toggle-setting.js-store-orig-value.custom-preference.enabled data-index='{{index}}'
+    h5.heading = "Course-specific preference {{number}}"
+    label.toggle title="Click to toggle"
+      = check_box_tag 'features[preferred_tasks]', 'yes', true, disabled: @course.locked?
+      | Enable
+    .settings
+      p.help List course specific criteria, such as tasks, schools or companies, specific locations, focus groups etc. Learners will be grouped based on their choice.
+
+      label for="preferred_tasks[{{index}}][name]" Name
+      input type='text' name="preferred_tasks[{{index}}][name]" value="#{TeamBuilder::CourseFeatures::PreferredTasks::DEFAULT_NAME} {{number}}"
+
+      label Options
+      ul.list-group.preferred-tasks data-task-name="preferred_tasks[{{index}}][tasks][]"
+        li.list-group-item.new-task
+          input placeholder="Enter new option"

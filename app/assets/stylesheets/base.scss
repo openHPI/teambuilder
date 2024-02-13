@@ -1,0 +1,222 @@
+$error-color: $red-text;
+$error-bg-color: $red-bg;
+$error-border-color: $red-border;
+
+$info-color: $green-text;
+$info-bg-color: $green-bg;
+$info-border-color: $green-border;
+
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Candara, Helvetica, Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table * {
+  margin-bottom: 0;
+}
+
+@mixin form-group {
+  margin-bottom: 30px;
+
+  @include media($large) {
+    @include outer-container;
+
+    & > label {
+      @include span-columns(3);
+      text-align: right;
+    }
+
+    // For horizontal forms (on large screens), position the label
+    // so that it is vertically aligned with the form fields.
+    & > label, .label-inline {
+      padding-top: 6px;
+    }
+
+    .control {
+      @include span-columns(9);
+    }
+  }
+
+  .control {
+    input[type=text], select, textarea {
+      width: 100%;
+    }
+  }
+
+  .help {
+    color: gray;
+    font-size: 0.9em;
+  }
+
+  &.has-error {
+    .help, label {
+      color: $error-color;
+    }
+
+    .control {
+      input, select, textarea {
+        border-color: $error-color;
+
+        &:focus {
+          border-color: darken($error-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Shift a column's contents, but not the container
+@mixin padding-shift($n-columns: 1) {
+  padding-left: $n-columns * flex-grid(1, 12) + $n-columns * flex-gutter(12);
+}
+
+%form-buttons {
+  @include media($large) {
+    @include padding-shift(3);
+  }
+
+  & > * {
+    margin-right: 10px;
+  }
+}
+
+
+@mixin danger-button {
+  color: red;
+  border-color: currentcolor;
+
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+.label-inline {
+  font-weight: normal;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.grouped-fields {
+  @include outer-container;
+
+  .field {
+    @include media($large) {
+      @include span-columns(6);
+    }
+  }
+}
+
+%box {
+  border: 3px solid;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: .5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  figcaption {
+    margin-bottom: 1rem;
+
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+}
+
+.notification {
+  position: fixed;
+
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+
+  padding: 5px;
+}
+
+.info-box {
+  @extend %box;
+
+  color: $info-color;
+  border-color: $info-border-color;
+  background-color: $info-bg-color;
+}
+
+.error-box {
+  @extend %box;
+
+  color: $error-color;
+  border-color: $error-border-color;
+  background-color: $error-bg-color;
+}
+
+#welcome {
+  text-align: center;
+
+  h1 {
+    font-size: 4em;
+    font-weight: bold;
+    color: #ccc;
+  }
+
+  p {
+    font-size: 1.7em;
+    color: #aaa;
+  }
+
+  .teaser {
+    margin: 200px auto;
+  }
+
+  .menu {
+    margin-top: 150px;
+
+    p {
+      font-size: 1.3em;
+    }
+  }
+}
+
+#thanks {
+  max-width: 750px;
+  margin: 50px auto;
+}
+
+nav {
+  text-align: center;
+}
+
+.warning {
+  max-width: 800px;
+  margin: 0 auto 10px;
+
+  border: 2px solid $red-border;
+  background-color: $red-bg;
+  color: $red-text;
+  padding: 10px;
+
+  * {
+    margin-bottom: 0;
+  }
+}
+.explanation {
+  max-width: 800px;
+  margin: 0 auto 10px;
+
+  border: 2px solid $light-green-border;
+  background-color: $light-green-fill;
+  color: $green-text;
+  padding: 10px;
+
+  * {
+    margin-bottom: 0;
+  }
+}

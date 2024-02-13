@@ -1,0 +1,28 @@
+#welcome
+  .teaser
+    p
+      span.loader.state-active
+    h1 Building teams...
+  p Please wait. This page will refresh automatically.
+
+javascript:
+
+  function updateGroupingSpinner() {
+      $.ajax({
+        dataType: 'json',
+        url: '#{course_path @course}',
+        cache: false
+      })
+          .done(function (data) {
+              if (! data.grouping_teams) {
+                  document.location.reload();
+              }
+          })
+          .always(function () {
+              // Try again in two seconds
+              setTimeout(updateGroupingSpinner, 2000);
+          });
+  }
+
+  // Starting ajax loop to update the grouping spinner
+  setTimeout(updateGroupingSpinner, 2000);

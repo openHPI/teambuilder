@@ -1,0 +1,6 @@
+host: ''
+https: false
+admin_password: ''
+platforms:
+  - name: dummy
+    type: dummy

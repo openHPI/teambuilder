@@ -1,0 +1,49 @@
+// vim: ft=json5
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+
+  // Only check for new updates and maintenance jobs weekly, on Sunday. New
+  // merge requests should then bde ready to be merged (CI etc.) on Monday.
+  schedule: ["every sunday"],
+
+  // Use semantic commits for renovate commits and MRs. This makes it easier to
+  // identify MR and when browsing the Git history. In the future, automatic
+  // changelog scripts can detect and classify changes correctly.
+  semanticCommits: "enabled",
+
+  packageRules: [
+    // Do not bump ruby version (only security patches)
+    {
+      matchDepNames: ["ruby"],
+      matchUpdateTypes: ["major", "minor"],
+      dependencyDashboardApproval: true,
+    },
+    // Disable major and minor updates (usually of docker images) in Gitlab CI
+    // and docker-compose. They are carefully chosen to match the production
+    // environment.
+    {
+      matchManagers: ["gitlabci"],
+      matchUpdateTypes: ["major", "minor"],
+      dependencyDashboardApproval: true,
+    },
+    // Auto-merge digest updates e.g. in .gitlab-ci.yml
+    {
+      matchUpdateTypes: ["digest", "minor", "patch", "pin", "lockfileMaintenance"],
+      automerge: true,
+    },
+    // Group NPM and Ruby updated together in single pull requests each, to have
+    // less pull requests to merge each week. Changes usually are small enough
+    // if applied regularly.
+    {
+      matchFiles: ["package.json"],
+      matchUpdateTypes: ["minor", "patch", "pin", "lockfileMaintenance"],
+      groupName: "NPM",
+    },
+    {
+      matchLanguages: ["Gemfile"],
+      matchUpdateTypes: ["minor", "patch", "pin", "lockfileMaintenance"],
+      groupName: "Ruby",
+    },
+  ],
+}

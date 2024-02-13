@@ -1,0 +1,306 @@
+= form_tag({action: 'build_teams'}, class: 'group-settings') do |f|
+  .controls
+    - if @course.copied?
+      .explanation
+        p This is a copied course you can do whatever you want with these grouping settings. So knock yourself out!
+    .explanation
+      p Before the teams can be built, you need to determine a few team criteria.
+
+    .course-settings-setting.js-toggle-setting
+      h5.heading Limit by number
+      label.toggle title="Click to toggle"
+        = check_box_tag 'limiters[by_number]', 'yes', true, data: {remember: 'enabled-limiter-by-number'}
+        | Enable
+      .settings
+        label for="max_candidates" Maximum no. of candidates
+        = text_field_tag :max_candidates, @course.enrollments.count, data: {remember: "max-candidates-course#{@course.id}"}
+
+    - if @course.platform.check_scores?
+      .course-settings-setting.js-toggle-setting
+        h5.heading Limit by score
+        label.toggle title="Click to toggle"
+          = check_box_tag 'limiters[by_score]', 'yes', true, data: {remember: 'enabled-limiter-by-score'}
+          | Enable
+        .settings
+          label for="min_score" Required minimum score
+          = text_field_tag :min_score, '50', class: 'with-unit', data: {remember: "min-score-course#{@course.id}"}
+          span.unit %
+
+    .course-settings-setting.enabled
+      h5.heading Order
+      .settings
+        label.label-inline title="random participants: even chances"
+          = radio_button_tag 'randomize', 'yes', false, data: {remember: "randomize-course#{@course.id}"}
+          | Random
+        label.label-inline title="first come first serve: sorted by registration date"
+          = radio_button_tag 'randomize', 'no', true, data: {remember: "randomize-course#{@course.id}"}
+          | First come first serve
+
+    .course-settings-setting.enabled
+      h5.heading Team size
+      .settings
+        p.help The tool attempts to create teams that are as close to the maximum as possible.
+        .grouped-fields
+          .field
+            label for="min_size" Minimum size
+            = text_field_tag :min_size, '3', data: {remember: "min-size-course#{@course.id}"}
+          .field
+            label for="max_size" Maximum size
+            = text_field_tag :max_size, '8', data: {remember: "max-size-course#{@course.id}"}
+    .course-settings-setting.enabled
+      h5.heading Location
+      .settings
+        - if @course.features.enabled?('local_teams')
+          label.label-inline
+            = radio_button_tag :timezone, 'local_teams', false, data: {remember: "local-teams-course#{@course.id}", :'show-when-checked' => '#max_distance'}
+            | Local Teams
+        label.label-inline
+          = radio_button_tag :timezone, 'same_timezone', true, data: {remember: "local-teams-course#{@course.id}", :'hide-when-checked' => '#max_distance'}
+          | Same Timezone
+        label.label-inline
+          = radio_button_tag :timezone, 'culturally_diverse', false, data: {remember: "local-teams-course#{@course.id}", :'hide-when-checked' => '#max_distance'}
+          | Culturally Diverse
+      - if @course.features.enabled?('local_teams')
+        .settings#max_distance style= "display: none"
+          label for="max_distance" Maximum distance
+          = text_field_tag :max_distance, '100', class: 'with-unit', data: {remember: "max-distance-course#{@course.id}"}
+          span.unit km
+
+    .explanation
+      p Below, you can choose what information course participants will have to provide to sign up for team assignment. The settings are listed in order of grouping priority. You can set your own priorities by dragging the grouping feature to your preferred position.
+    div#feature_list
+
+      - if @course.features.enabled?('language_teams')
+        .course-settings-setting.js-toggle-setting
+          span.drag-handle
+          h5.heading Language
+          label.toggle title="Click to toggle"
+            = check_box_tag 'enabled[language_teams]', 'yes', true, data: {remember: 'enabled-language-teams'}
+            | Enable
+          .settings
+            label.label-inline
+              = radio_button_tag :language, 'similar', false, data: { remember: "language-course#{@course.id}" }
+              | Similar
+            label.label-inline
+              = radio_button_tag :language, 'diverse', true, data: { remember: "language-course#{@course.id}" }
+              | Diverse
+
+      - if @course.features.enabled?('group_by_expertise')
+        .course-settings-setting.js-toggle-setting
+          span.drag-handle
+          h5.heading Expertise
+          label.toggle title="Click to toggle"
+            = check_box_tag 'enabled[group_by_expertise]', 'yes', true, data: {remember: 'enabled-group-by-expertise'}
+            | Enable
+          .settings
+            label.label-inline
+              = radio_button_tag :expertise, 'similar', false, data: {remember: "expertise-course#{@course.id}"}
+              | Similar
+            label.label-inline
+              = radio_button_tag :expertise, 'diverse', true, data: {remember: "expertise-course#{@course.id}"}
+              | Diverse
+
+      - if @course.features.enabled?('group_by_gender')
+        .course-settings-setting.js-toggle-setting
+          span.drag-handle
+          h5.heading Gender
+          label.toggle title="Click to toggle"
+            = check_box_tag 'enabled[group_by_gender]', 'yes', true, data: {remember: 'enabled-group-by-gender'}
+            | Enable
+          .settings
+            label.label-inline
+              = radio_button_tag :gender, 'similar', false, data: {remember: "gender-course#{@course.id}"}
+              | Similar
+            label.label-inline
+              = radio_button_tag :gender, 'diverse', true, data: {remember: "gender-course#{@course.id}"}
+              | Diverse
+
+      - if @course.features.enabled?('group_by_age')
+        .course-settings-setting.js-toggle-setting
+          span.drag-handle
+          h5.heading Age
+          label.toggle title="Click to toggle"
+            = check_box_tag 'enabled[group_by_age]', 'yes', true, data: {remember: 'enabled-group-by-age'}
+            | Enable
+          .settings
+            label.label-inline
+              = radio_button_tag :age, 'similar', false, data: { remember: "age-course#{@course.id}" }
+              | Similar
+            label.label-inline
+              = radio_button_tag :age, 'diverse', true, data: { remember: "age-course#{@course.id}" }
+              | Diverse
+
+      - if @course.features.enabled?('group_by_commitment')
+        .course-settings-setting.js-toggle-setting
+          span.drag-handle
+          h5.heading Commitment
+          label.toggle title="Click to toggle"
+            = check_box_tag 'enabled[group_by_commitment]', 'yes', true, data: {remember: 'enabled-group-by-commitment'}
+            | Enable
+          .settings
+            label.label-inline
+              = radio_button_tag :commitment, 'similar', false, data: { remember: "commitment-course#{@course.id}" }
+              | Similar
+            label.label-inline
+              = radio_button_tag :commitment, 'diverse', true, data: { remember: "commitment-course#{@course.id}" }
+              | Diverse
+
+      - if @course.features.enabled?('preferred_tasks')
+        - @course.custom_preferences.each_with_index do |pt, i|
+          - remember = "#{pt.task_identifier}-course#{@course.id}"
+          .course-settings-setting.js-toggle-setting
+            span.drag-handle
+            h5.heading = pt.name
+            label.toggle title="Click to toggle"
+              = check_box_tag 'enabled[preferred_tasks]', 'yes', true, data: {remember: "enabled-preferred-tasks-#{pt.id}"}
+              | Enable
+            .settings
+              label.label-inline
+                = radio_button_tag pt.task_identifier, 'similar', false, data: { remember: remember }
+                | Similar
+              label.label-inline
+                = radio_button_tag pt.task_identifier, 'diverse', true, data: { remember: remember }
+                | Diverse
+
+  .group-settings-preview
+    h6 Preview
+
+    - if @course.platform.check_scores?
+      = submit_tag 'Update scores', class: 'btn update-button', title: 'Collects the grades for all main assignments, whose deadlines have already passed'
+      .loader#update-loader class=(@course.updating_scores ? 'state-active' : '')
+    #preview-graph
+      .bar.passed
+
+    .preview-stats
+      span Passed: <strong id="passed-applicants">3455</strong>
+      span Total: <strong id="total-applicants">#{@course.enrollments.count}</strong>
+
+    p This will generate approx. <strong id="team-count-prediction">300</strong> teams.
+    label.toggle title="Click to toggle"
+      = check_box_tag 'new_grouping', 'yes', false, data: {remember: 'enabled_new_grouping'}
+      | Try our new grouping algorithm (Beta)
+    .warning#algorithm_warning
+      p If you don't use the new grouping algorithm, some diversity selections will not be respected.
+    .group-settings-buttons
+      .buttons
+        = submit_tag 'Build teams', name: 'build', class: 'btn button-primary'
+
+javascript:
+
+  window.applicants = #{@course.enrollments.map{|enrollment| { score: enrollment.score } }.to_json.html_safe};
+
+  $('#new_grouping').click(updateWarning);
+  function updateWarning() {
+    if($('#new_grouping').is(':checked')) {
+      $('#algorithm_warning').removeClass('old-algorithm');
+    } else {
+      $('#algorithm_warning').addClass('old-algorithm');
+    }
+  }
+
+  $(function () {
+    updateWarning();
+  });
+
+
+  function Setting($element)
+  {
+      if ($element.is(':checkbox')) {
+          return CheckboxSetting($element);
+      } else if ($element.is(':radio')) {
+          return RadioGroupSetting($element);
+      } else {
+          return NormalSetting($element);
+      }
+  }
+
+  function CheckboxSetting($element)
+  {
+      return {
+          getValue: function() {
+              return $element[0].checked;
+          },
+          setValue: function(value) {
+              $element[0].checked = value;
+          }
+      };
+  }
+
+  function RadioGroupSetting($element) {
+      return {
+          getValue: function () {
+              return $element[0].value;
+          },
+          setValue: function (value) {
+              if ($element[0].value === value) {
+                  $element.prop('checked', true).trigger('change');
+              }
+          }
+      };
+  }
+
+  function NormalSetting($element)
+  {
+      return {
+          getValue: function() {
+              return $element[0].value;
+          },
+          setValue: function(value) {
+              $element[0].setAttribute('value', value);
+          }
+      };
+  }
+
+  Sortable.create(document.getElementById('feature_list'), {handle: '.drag-handle'});
+
+  $('form.group-settings')
+      .on('change', '[data-remember]', function () {
+          var $elem = $(this);
+
+          // localStorage can only save strings, so we serialize the value as JSON
+          localStorage.setItem(
+              $elem.data('remember'),
+              JSON.stringify({value: Setting($elem).getValue()})
+          );
+      })
+      .on('change', '[data-hide-when-checked]', function () {
+          var selector = $(this).data('hide-when-checked');
+          $(selector).hide();
+      })
+      .on('change', '[data-show-when-checked]', function () {
+          var selector = $(this).data('show-when-checked');
+          $(selector).show();
+      })
+      .find('[data-remember]').each(function () {
+          var $elem = $(this);
+
+          var storedValue = localStorage.getItem($elem.data('remember'));
+          if (storedValue) {
+              storedValue = JSON.parse(storedValue).value;
+              Setting($elem).setValue(storedValue);
+          }
+      });
+
+  function updateScoreSpinner() {
+      $.getJSON('#{course_path @course}')
+          .always(function () {
+              document.getElementById('update-loader').classList.remove('state-active');
+          })
+          .done(function (data) {
+              if (data.updating_scores) {
+                  document.getElementById('update-loader').classList.add('state-active');
+                  // Send another request in a second
+                  setTimeout(updateScoreSpinner, 1000);
+              }
+          })
+          .fail(function () {
+              // Try again in a second
+              setTimeout(updateScoreSpinner, 1000);
+          });
+  }
+
+
+- if @course.updating_scores
+  javascript:
+    // Starting ajax loop to update the course update spinner for scores
+    setTimeout(updateScoreSpinner, 500);

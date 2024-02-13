@@ -1,0 +1,5 @@
+.course-settings-setting.js-toggle-setting
+  h5.heading = title
+  label.toggle title="Click to toggle"
+    = check_box_tag "features[#{type}]", 'yes', @course.features.enabled?(type), disabled: locked
+    | Enable

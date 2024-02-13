@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TeamBuilder</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= yield :head %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <% if current_user.admin? %>
+    <%= render 'layouts/parts/admin_nav' %>
+  <% end %>
+
+  <div class="container">
+    <% if flash[:notice] %>
+      <figure class="notification info-box">
+        <p><%= flash[:notice] %></p>
+      </figure>
+    <% end %>
+
+    <% if flash[:error] %>
+      <figure class="notification error-box">
+        <p><%= flash[:error] %></p>
+      </figure>
+    <% end %>
+
+    <% if @course.present? && current_user.course_admin? %>
+      <%= render 'layouts/parts/course_nav' %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>

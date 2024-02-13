@@ -1,0 +1,5 @@
+class AddUpdatingScoresToCourses < ActiveRecord::Migration[4.2]
+  def change
+    add_column :courses, :updating_scores, :boolean, null: false, default: false
+  end
+end
