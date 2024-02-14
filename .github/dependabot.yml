@@ -22,7 +22,3 @@ updates:
     labels:
       - dependencies
       - javascript
-    groups:
-      sentry-javascript:
-        patterns:
-          - "@sentry*"
