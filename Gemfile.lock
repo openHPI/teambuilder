@@ -54,7 +54,7 @@ GEM
     amq-protocol (2.3.2)
     arel (9.0.0)
     bindata (2.4.15)
-    bootsnap (1.18.3)
+    bootsnap (1.18.4)
       msgpack (~> 1.2)
     bourbon (4.3.4)
       sass (~> 3.4)
