@@ -2,7 +2,7 @@
   "name": "teambuilder",
   "private": true,
   "dependencies": {
-    "jquery": "2.2.4",
+    "jquery": "3.5.0",
     "jquery-locationpicker": "0.1.12",
     "jquery-ujs": "1.2.3",
     "rx-jquery": "1.1.7",
