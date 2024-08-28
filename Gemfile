@@ -42,7 +42,7 @@ gem 'bootsnap', require: false
 
 # Debugging / testing helpers
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.8.1'
+  gem 'listen', '>= 3.0.5', '< 3.9.1'
   gem 'spring'
 end
 
