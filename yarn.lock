@@ -40,7 +40,7 @@ skeleton-framework@1.0.10:
   resolved "https://registry.yarnpkg.com/skeleton-framework/-/skeleton-framework-1.0.10.tgz#dc1f887da47efad6a18ae7ebe719d5d637d08291"
   integrity sha512-+ArbtRjRckN/XEozQB1jGFmcIuSinOrqkh0EXZko4LcpMi2NEj3ueNsz8nYQlUJJDWFpPC0aVd212yscvHUp/Q==
 
-sortablejs@1.15.2:
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.15.2.tgz#4e9f7bda4718bd1838add9f1866ec77169149809"
-  integrity sha512-FJF5jgdfvoKn1MAKSdGs33bIqLi3LmsgVTliuX6iITj834F+JRQZN90Z93yql8h0K2t0RwDPBmxwlbZfDcxNZA==
+sortablejs@1.15.5:
+  version "1.15.5"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.15.5.tgz#225edc6ae153b2e5eca54f150abc2bc5f9305b29"
+  integrity sha512-xDJLosRJzZ+nVnjaUYmO9H/wZth0lWTRq7VzV1eQyDSKsvxmoJ69HTGcwnwGYpJG/AkJ9OWiwWH4BhIycdonWw==
