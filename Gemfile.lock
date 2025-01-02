@@ -151,7 +151,7 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
-    ffi (1.15.5)
+    ffi (1.17.1)
     forgery (0.8.1)
     geocoder (1.8.2)
     geokit (1.14.0)
@@ -177,7 +177,7 @@ GEM
       aes_key_wrap
       bindata
       httpclient
-    listen (3.8.0)
+    listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     little-plugger (1.1.4)
@@ -273,7 +273,7 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rake (13.1.0)
     rb-fsevent (0.11.2)
-    rb-inotify (0.10.1)
+    rb-inotify (0.11.1)
       ffi (~> 1.0)
     rbtree (0.4.6)
     redis-client (0.19.1)
@@ -388,7 +388,7 @@ DEPENDENCIES
   geocoder
   geokit-rails
   ims-lti (~> 2.0)
-  listen (>= 3.0.5, < 3.8.1)
+  listen (>= 3.0.5, < 3.9.1)
   mnemosyne-ruby (~> 1.16)
   neat (~> 1.0)
   oauth (~> 0.6.0)
