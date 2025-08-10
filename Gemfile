@@ -36,7 +36,7 @@ gem 'oauth', '~> 0.6.0'
 gem 'builder'
 
 # Monitoring
-gem 'mnemosyne-ruby', '~> 1.16'
+gem 'mnemosyne-ruby', '~> 2.0'
 
 gem 'bootsnap', require: false
 
